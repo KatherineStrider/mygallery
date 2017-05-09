@@ -22,7 +22,7 @@ import okhttp3.Response;
 public class FlickrFetcher {
 
     private static final String TAG = GalleryActivity.class.getSimpleName();
-    private static final String API_KEY = "";
+    private static final String API_KEY = "14118885b22f62d488644fdcd1b05d28";
     private static final String ERROR_MESSAGE_DATA_LOAD_FAILED = "Ошибка загрузки данных";
     private static final String ERROR_MESSAGE_JSON = "Ошибка парсинга Json";
 
@@ -46,7 +46,7 @@ public class FlickrFetcher {
         try{
             String url = Uri.parse("https://api.flickr.com/services/rest").buildUpon()
                     .appendQueryParameter("method", "flickr.photos.getRecent")
-//                    .appendQueryParameter("api_key", API_KEY)
+                    .appendQueryParameter("api_key", API_KEY)
                     .appendQueryParameter("format", "json")
                     .appendQueryParameter("nojsoncallback", "1")
                     .appendQueryParameter("extras", "url_s")
